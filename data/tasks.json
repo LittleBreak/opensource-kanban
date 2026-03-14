@@ -1,0 +1,32 @@
+[
+  {
+    "id": "task-1",
+    "title": "调研 OpenClaw good-first-issue",
+    "description": "浏览 OpenClaw 仓库的 good-first-issue 标签，找到适合新手的任务",
+    "status": "todo",
+    "difficulty": "easy",
+    "estimatedTime": "15min",
+    "link": "https://github.com/openclaw/openclaw/labels/good%20first%20issue",
+    "createdAt": "2026-03-14T08:00:00.000Z"
+  },
+  {
+    "id": "task-2",
+    "title": "阅读 Vue 贡献指南",
+    "description": "通读 Vue.js 官方贡献指南，了解 PR 流程和代码规范",
+    "status": "in-progress",
+    "difficulty": "easy",
+    "estimatedTime": "30min",
+    "link": "https://github.com/vuejs/core/blob/main/.github/contributing.md",
+    "createdAt": "2026-03-13T10:00:00.000Z"
+  },
+  {
+    "id": "task-3",
+    "title": "搭建 Kanban Board",
+    "description": "使用 Next.js + TypeScript + Tailwind CSS 搭建开源贡献看板项目",
+    "status": "done",
+    "difficulty": "medium",
+    "estimatedTime": "2h",
+    "link": "",
+    "createdAt": "2026-03-12T09:00:00.000Z"
+  }
+]
