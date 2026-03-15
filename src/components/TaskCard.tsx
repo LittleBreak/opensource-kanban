@@ -109,6 +109,16 @@ export default function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {
         </p>
       )}
 
+      {/* Resolution (only shown for done tasks with resolution) */}
+      {task.resolution && (
+        <div className="mb-3 flex items-center gap-1.5 rounded-lg bg-emerald-500/10 px-2.5 py-1.5 text-xs text-emerald-400">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="shrink-0">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+          <span>{task.resolution}</span>
+        </div>
+      )}
+
       {/* Tags row */}
       <div className="flex flex-wrap items-center gap-2 text-xs">
         <span className={`rounded-full px-2 py-0.5 font-medium ${diff.color}`}>

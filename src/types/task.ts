@@ -10,4 +10,5 @@ export interface Task {
   estimatedTime: string;
   link: string;
   createdAt: string;
+  resolution?: string;
 }

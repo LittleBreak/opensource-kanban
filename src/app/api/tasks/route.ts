@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
-import path from "path";
 import type { Task } from "@/types/task";
 
-const DATA_PATH = path.join(process.cwd(), "data", "tasks.json");
+const DATA_PATH = "/Users/caizongding.1/.openclaw/workspace-opensource/tasks/opensource-task.json";
 
 async function readTasks(): Promise<Task[]> {
   const raw = await fs.readFile(DATA_PATH, "utf-8");
@@ -32,6 +31,7 @@ export async function POST(request: Request) {
     estimatedTime: body.estimatedTime ?? "",
     link: body.link ?? "",
     createdAt: new Date().toISOString(),
+    ...(body.resolution ? { resolution: body.resolution } : {}),
   };
 
   tasks.push(newTask);
