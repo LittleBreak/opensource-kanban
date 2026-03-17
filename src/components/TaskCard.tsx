@@ -133,18 +133,32 @@ export default function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {
 
       {/* Footer: link + date */}
       <div className="mt-3 flex items-center justify-between text-xs text-white/30">
-        {task.link ? (
-          <a
-            href={task.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors truncate max-w-[60%]"
-          >
-            {task.link.replace(/^https?:\/\//, "").split("/").slice(0, 3).join("/")}
-          </a>
-        ) : (
-          <span />
-        )}
+        <div className="flex items-center gap-2 truncate max-w-[70%]">
+          {task.link && (
+            <a
+              href={task.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors truncate"
+            >
+              {task.link.replace(/^https?:\/\//, "").split("/").slice(0, 3).join("/")}
+            </a>
+          )}
+          {task.prLink && (
+            <a
+              href={task.prLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-0.5 rounded bg-purple-500/15 px-1.5 py-0.5 text-purple-400 hover:bg-purple-500/25 transition-colors shrink-0"
+              title={task.prLink}
+            >
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="shrink-0">
+                <path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm0 9.5a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm7.5-.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM4.25.5a2.75 2.75 0 0 0-.75 5.4v4.2a2.75 2.75 0 1 0 1.5 0V5.9a2.75 2.75 0 0 0-.75-5.4Zm0 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm0 8.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm7.5-1.5a2.75 2.75 0 1 0-1.5 0v.9a2.75 2.75 0 0 0-.75 5.4 2.75 2.75 0 0 0 .75-5.4v-.9Z"/>
+              </svg>
+              PR
+            </a>
+          )}
+        </div>
         <span>{new Date(task.createdAt).toLocaleDateString("zh-CN")}</span>
       </div>
     </div>

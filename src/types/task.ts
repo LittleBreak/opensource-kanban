@@ -8,7 +8,10 @@ export interface Task {
   status: TaskStatus;
   difficulty: TaskDifficulty;
   estimatedTime: string;
+  actualTime?: string;
   link: string;
   createdAt: string;
+  completedAt?: string;
+  prLink?: string;
   resolution?: string;
 }
